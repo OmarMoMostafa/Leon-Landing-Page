@@ -25,9 +25,38 @@ body {
   font-style: normal;
 }
 
+/* Components */
 .container {
   padding: 0 15px;
   margin: 0 auto;
+}
+
+.special-heading {
+  color: #ebeced;
+  font-size: 100px;
+  text-align: center;
+  letter-spacing: -4px;
+  font-weight: 800;
+}
+
+.special-heading + p {
+  text-align: center;
+  margin-top: -42px;
+  margin-bottom: 60px;
+  font-size: 20px;
+  color: #797979;
+}
+
+/* extra small screen */
+@media (max-width: 768px) {
+  .special-heading {
+    font-size: 60px;
+  }
+
+  .special-heading + p {
+    font-size: 16px;
+    margin-top: -30px;
+  }
 }
 
 /* small screen */
@@ -159,4 +188,65 @@ header .container li a:hover {
 .features .feat p {
   color: #777;
   line-height: 1.5;
+}
+
+/* Services */
+.services .services-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(225px, 1fr));
+  gap: 20px;
+}
+
+.services .services-content .srv {
+  display: flex;
+  margin-bottom: 35px;
+}
+
+.services .services-content .srv i {
+  color: var(--main-color);
+  margin-right: 10px;
+}
+
+.services .services-content .srv h3 {
+  margin-bottom: 20px;
+}
+
+.services .services-content .srv p {
+  color: #777;
+  line-height: 1.5;
+}
+
+.services .services-content .image img {
+  width: 100%;
+}
+
+.services .services-content .image {
+  position: relative;
+}
+
+.services .services-content .image::before {
+  content: "";
+  position: absolute;
+  height: 120%;
+  width: 25%;
+  top: -10%;
+  right: -5%;
+  z-index: -1;
+  background-color: var(--secondary-color);
+}
+
+@media (max-width: 767px) {
+  .services .services-content .srv {
+    flex-direction: column;
+    text-align: center;
+  }
+  .services .services-content .srv i {
+    margin-right: 0;
+    margin-bottom: 10px;
+  }
+}
+@media (max-width: 992px) {
+  .services .services-content .image-col {
+    display: none;
+  }
 }
